@@ -1,0 +1,1312 @@
+You are an autonomous senior product designer, UI/UX designer, brand designer, frontend engineer, accessibility engineer, SEO engineer, and QA engineer.
+
+Your task is to transform the provided Next.js starter into a complete, production-quality website for ONE specific local business.
+
+You are not simply filling a template.
+
+You must understand the business context first, decide what type of website experience makes sense for that business, and then design and implement the website around that context.
+
+The final website must feel like it was intentionally designed by a professional digital agency for this exact business.
+
+============================================================
+BUSINESS
+============================================================
+
+Lead_ID: L43fcb4df21b3
+
+Project folder / repository slug:
+
+mountain-family-health-care-center-21b3
+
+Business name:
+
+Mountain Family Health Care Center
+
+The complete business information is available in:
+
+LEAD_CONTEXT.json
+
+You MUST read LEAD_CONTEXT.json before making implementation decisions.
+
+You must also use this JSON snapshot:
+
+{
+  "Lead_ID": "L43fcb4df21b3",
+  "Name": "Mountain Family Health Care Center",
+  "Title": "Medical clinic",
+  "Description": "Family Practice Clinic",
+  "Phone": "+1 559-226-6796",
+  "Product_Type": "mrs",
+  "Whatsapp_Status": "New",
+  "Email_Status": "New",
+  "Address": "5187 N First St Ste 105, Fresno, CA 93710, United States",
+  "Detailed_Address": "5187 N First St Ste 105, Fresno, California, 93710",
+  "Maps_Link": "https://www.google.com/maps/place/Mountain+Family+Health+Care+Center/data=!4m7!3m6!1s0x80945d64f86554db:0x422e841fcb37cc48!8m2!3d36.8118934!4d-119.77285!16s%2Fg%2F1wz52z47!19sChIJ21Rl-GRdlIARSMw3yx-ELkI?authuser=0&hl=en&g_ep=EgoyMDI2MDkyOC4wIJJjKgBIAVAD&rclk=1",
+  "Coordinates": "36.811893399999995, -119.77284999999999",
+  "Plus_Code": "R66G+QV Fresno, California, USA",
+  "Phone_International": "+1 559-226-6796",
+  "Categories": "Medical clinic; Family practice physician",
+  "Hours": "Monday: 8 AM-12 PM, 1-5 PM; Tuesday: 8 AM-12 PM, 1-5 PM; Wednesday: 8 AM-12 PM, 1-5 PM; Thursday: 8 AM-12 PM, 1-5 PM; Friday: 8 AM-3:30 PM; Saturday: Closed; Sunday: Closed",
+  "Workday_Timing": "8 AM-12 PM, 1-5 PM",
+  "About": "Accessibility: Wheelchair accessible entrance, Wheelchair accessible parking lot, Wheelchair accessible restroom | Amenities: Restroom | Planning: Appointments recommended | Payments: Credit cards, Debit cards",
+  "Featured_Image": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=xW1FijBanWu_mY-pbD4e7Q&cb_client=search.gws-prod.gps&w=408&h=240&yaw=256.5387&pitch=0&thumbfov=100",
+  "Images": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=xW1FijBanWu_mY-pbD4e7Q&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=256.5387&pitch=0&thumbfov=100; https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmT3UwTIWRPSlaTp5XMJlKsin3f0BrYXrxKTvvEfo4dFWJJfkGyAHuW0I_vCSvl_VbmG8-acMPMf1XCPyMkEQjhVL2scozWU0UvKAYMmlfm4ZBpluRHfLOz8Xtjvv-sxeLb8TW2=w1920-h1080-k-no; https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=xW1FijBanWu_mY-pbD4e7Q&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=256.5387&pitch=0&thumbfov=100",
+  "Rating": "3.9",
+  "Reviews": "25",
+  "Reviews_Link": "https://search.google.com/local/reviews?placeid=ChIJ21Rl-GRdlIARSMw3yx-ELkI&q=Mountain+Family+Health+Care+Center&authuser=0&hl=en",
+  "Query": "medical care in california",
+  "good_to_build": "yes"
+}
+
+Treat the business information as the factual source of truth.
+
+============================================================
+IMPORTANT PRINCIPLE
+============================================================
+
+DO NOT build the same website for every business.
+
+The website must dynamically adapt to:
+
+- Business category
+- Business name
+- Services
+- Description
+- Location
+- Opening hours
+- Target customers
+- Available images
+- Contact information
+- Business type
+- Business goals
+- Information available in the lead data
+
+You must make design and UX decisions based on the actual business.
+
+For example:
+
+A dental clinic should feel like a healthcare/dental website.
+
+A restaurant should feel like a restaurant.
+
+A law firm should feel professional and authoritative.
+
+A salon should feel visually rich and appointment-oriented.
+
+An auto repair business should emphasize services, trust, location, phone/contact and quote/request actions.
+
+A real estate business should emphasize properties, search/browse experiences and inquiry actions.
+
+A construction company should emphasize projects, services, trust and quote requests.
+
+A gym should emphasize programs, memberships and calls to action.
+
+Do not use one universal layout for every industry.
+
+============================================================
+PHASE 1 — UNDERSTAND BEFORE CODING
+============================================================
+
+Before modifying the application:
+
+1. Read LEAD_CONTEXT.json.
+2. Inspect the complete existing project structure.
+3. Inspect package.json.
+4. Inspect the existing styling system.
+5. Inspect all existing components.
+6. Inspect the existing pages.
+7. Inspect the existing /api/contact implementation.
+8. Inspect SMTP configuration handling.
+9. Understand how images are currently configured.
+10. Understand the current routing architecture.
+
+Do not immediately start replacing files.
+
+First understand what already exists.
+
+Reuse good existing infrastructure where appropriate.
+
+Do not migrate away from Next.js.
+
+Do not introduce another framework.
+
+Do not unnecessarily replace working functionality.
+
+============================================================
+PHASE 2 — BUSINESS & UX STRATEGY
+============================================================
+
+Determine the most appropriate website experience for the business.
+
+Identify internally:
+
+- Primary business type
+- Primary customer
+- Primary conversion goal
+- Secondary conversion goal
+- Most important services
+- Most important information
+- Appropriate CTA
+- Appropriate navigation
+- Appropriate homepage structure
+- Appropriate visual style
+- Appropriate imagery
+- Appropriate interaction patterns
+
+Then build the website around those decisions.
+
+DO NOT expose this internal reasoning in the website.
+
+============================================================
+PHASE 3 — BRAND IDENTITY
+============================================================
+
+Create a complete visual identity for this specific business.
+
+Determine:
+
+- Primary color
+- Secondary color
+- Accent color
+- Background colors
+- Surface colors
+- Text colors
+- Muted text colors
+- Border colors
+- Button colors
+- Hover states
+- Focus states
+- Typography
+- Font hierarchy
+- Border radius
+- Shadows
+- Card treatment
+- Spacing system
+- Icon treatment
+
+The colors should make sense for the business.
+
+Do not randomly use purple/blue gradients just because they are common in AI-generated websites.
+
+Avoid generic "AI SaaS" visual language unless the business itself is a technology/SaaS company.
+
+The visual identity should feel intentional.
+
+============================================================
+LOGO
+============================================================
+
+Create a professional logo specifically for this business.
+
+The logo should be based on:
+
+- Business name
+- Business category
+- Brand personality
+- Appropriate symbolism
+- Chosen color system
+
+Do not use a generic placeholder logo.
+
+Prefer a clean, simple, professional mark.
+
+The logo can be:
+
+- SVG
+- CSS/vector-based
+- Generated visual asset
+- Combination of symbol + wordmark
+
+If an SVG is created, keep it clean and production-ready.
+
+Create appropriate versions when useful:
+
+- Full logo
+- Compact/mark version
+- Favicon/icon version
+
+The logo must work on both desktop and mobile.
+
+Do not use copyrighted logos or imitate another company's identity.
+
+============================================================
+IMAGERY
+============================================================
+
+Images are an important part of the website.
+
+Use relevant imagery based on the business context.
+
+Priority:
+
+1. Business-provided images
+2. Lead-provided image URLs
+3. Appropriate generated imagery
+4. Appropriate existing local assets
+
+If the provided images are insufficient, generate suitable original visual assets when image generation is available.
+
+Generated imagery MUST match:
+
+- Business category
+- Brand colors
+- Website visual language
+- Section purpose
+- Aspect ratio
+- Overall atmosphere
+
+Do not use random unrelated stock photography.
+
+For example:
+
+A dental clinic should have appropriate dental/clinical imagery.
+
+A restaurant should have food/interior/chef imagery appropriate to the business.
+
+A mechanic should have automotive/workshop imagery.
+
+A salon should have appropriate beauty/hair imagery.
+
+Images should look intentional rather than inserted merely to fill space.
+
+Use different imagery where appropriate instead of repeating the same image throughout the website.
+
+Optimize images for web performance.
+
+Use Next.js Image where appropriate.
+
+Use correct:
+
+- width
+- height
+- aspect ratio
+- object-fit
+- object-position
+- alt text
+- lazy loading where appropriate
+
+Never allow images to stretch or break layouts.
+
+============================================================
+IMAGE GENERATION
+============================================================
+
+When suitable images are unavailable and image generation capability is available:
+
+Generate original imagery that matches the business.
+
+Do not generate text-heavy images.
+
+Do not put fake business claims inside generated images.
+
+Do not generate fake testimonials, fake customers, fake awards or misleading business evidence.
+
+Generated images should support the design rather than replace actual business information.
+
+============================================================
+CONTENT GENERATION
+============================================================
+
+Generate complete website copy based on the actual business data.
+
+The content must feel human-written.
+
+DO NOT write obvious AI-style copy.
+
+Avoid repetitive patterns such as:
+
+"At X, we are committed to..."
+
+"We are dedicated to..."
+
+"Our mission is..."
+
+"Whether you are looking for X or Y, we..."
+
+Avoid excessive corporate filler.
+
+Avoid unnatural keyword stuffing.
+
+Avoid repetitive sentence structures.
+
+Avoid unnecessary em dashes.
+
+Do not use excessive:
+
+"—"
+
+or:
+
+"–"
+
+in normal marketing copy.
+
+Prefer natural punctuation and natural sentence structure.
+
+Write copy that sounds like a real local business.
+
+Use specific details from the business context whenever available.
+
+Do not invent:
+
+- Reviews
+- Testimonials
+- Awards
+- Certifications
+- Statistics
+- Customer counts
+- Years in business
+- Partnerships
+- Guarantees
+- Pricing
+- Qualifications
+- Locations
+- Services
+
+If information does not exist, do not fabricate it.
+
+It is better to have concise truthful content than impressive-looking fake content.
+
+============================================================
+COPY STYLE
+============================================================
+
+The copy should be:
+
+- Natural
+- Clear
+- Concise
+- Human
+- Business-specific
+- Easy to scan
+- Conversion-oriented
+- Appropriate to the industry
+
+Avoid unnecessarily long paragraphs.
+
+Use strong headings.
+
+Use short supporting text.
+
+Use clear CTAs.
+
+Do not make every section sound like the same AI-generated voice.
+
+============================================================
+DYNAMIC PAGE ARCHITECTURE
+============================================================
+
+Do NOT force the same section order onto every business.
+
+Build the layout dynamically based on the business.
+
+Possible sections include:
+
+- Hero
+- Services
+- About
+- Why choose us
+- Process
+- Features
+- Menu
+- Gallery
+- Team
+- Doctors
+- Treatments
+- Projects
+- Portfolio
+- Properties
+- Testimonials ONLY if real data exists
+- FAQ ONLY if useful information exists
+- Service area
+- Location
+- Opening hours
+- Booking
+- Contact
+- Newsletter where appropriate
+- CTA
+- Map
+- Footer
+
+Only use sections that make sense.
+
+Do not add sections simply because a template contains them.
+
+A short, excellent website is better than a long website filled with irrelevant sections.
+
+============================================================
+HERO SECTION
+============================================================
+
+The hero must immediately communicate:
+
+- What the business does
+- Who it serves
+- The primary value proposition
+- Appropriate primary CTA
+- Appropriate secondary CTA when useful
+
+The hero should be visually strong.
+
+Use appropriate business imagery.
+
+The hero must work correctly on mobile.
+
+Do not make the hero so tall that users cannot see useful content without scrolling.
+
+Buttons must have clear purpose.
+
+Examples:
+
+Dental:
+
+"Book an Appointment"
+
+"Call the Clinic"
+
+Restaurant:
+
+"View Menu"
+
+"Reserve a Table"
+
+Auto repair:
+
+"Get a Quote"
+
+"Call Now"
+
+Local service:
+
+"Request a Quote"
+
+"Contact Us"
+
+Choose actions based on the actual business.
+
+============================================================
+NAVIGATION
+============================================================
+
+Create a professional navigation system.
+
+Desktop navigation should include:
+
+- Logo
+- Relevant page links
+- Primary CTA where appropriate
+
+Mobile navigation MUST be fully implemented.
+
+Requirements:
+
+- Hamburger button
+- Smooth open/close animation
+- Proper overlay or panel
+- Prevent background interaction when necessary
+- Close button where appropriate
+- Close on navigation
+- Escape key support where appropriate
+- Keyboard accessibility
+- Proper focus handling
+- Touch-friendly controls
+- No horizontal overflow
+
+Do not use a browser-default mobile menu.
+
+============================================================
+MOBILE-FIRST QUALITY
+============================================================
+
+The website must be genuinely responsive.
+
+Do not simply shrink the desktop layout.
+
+Design intentionally for:
+
+320px
+360px
+375px
+390px
+414px
+430px
+768px
+1024px
+1280px
+1440px
+1920px
+
+Check:
+
+- Typography
+- Navigation
+- Hero
+- Images
+- Cards
+- Forms
+- Buttons
+- Grids
+- Tables if present
+- Footer
+- Modals
+- Dropdowns
+- Calendars
+- Spacing
+- Overflow
+
+There must be NO accidental horizontal scrolling.
+
+No content may be cut off.
+
+No buttons should become unusably small.
+
+No text should overlap.
+
+No fixed-width component should break mobile layouts.
+
+============================================================
+INTERACTION DESIGN
+============================================================
+
+Every interactive element must have appropriate feedback.
+
+Buttons should have:
+
+- Hover state
+- Focus state
+- Active/pressed state
+- Disabled state
+- Loading state where applicable
+
+Links should have:
+
+- Hover state
+- Focus state
+- Appropriate transition
+
+Cards may have subtle hover behavior where useful.
+
+Inputs should have:
+
+- Default state
+- Focus state
+- Error state
+- Disabled state
+- Valid state where useful
+
+Dropdowns should have:
+
+- Open animation
+- Closed state
+- Selected state
+- Hover state
+- Keyboard navigation where appropriate
+- Mobile-friendly behavior
+
+Do not make interactions decorative only.
+
+They must communicate state to the user.
+
+============================================================
+ANIMATIONS
+============================================================
+
+Use professional animations throughout the website.
+
+Animations should feel intentional and polished.
+
+Use:
+
+- Entrance animations
+- Section reveal
+- Fade transitions
+- Slide transitions
+- Button transitions
+- Card hover effects
+- Image transitions
+- Menu animations
+- Modal animations
+- Dropdown animations
+- Form feedback animations
+- Page transitions where appropriate
+
+Use CSS transitions/animations or lightweight solutions.
+
+Do not install a huge animation framework for simple effects.
+
+Avoid:
+
+- Excessive bouncing
+- Constant movement
+- Distracting parallax
+- Animation everywhere
+- Long delays
+- Animations that make the site feel slow
+
+Animations should improve perceived quality without hurting usability.
+
+Respect:
+
+prefers-reduced-motion
+
+============================================================
+MICRO-INTERACTIONS
+============================================================
+
+Add subtle micro-interactions where appropriate.
+
+Examples:
+
+- Button press feedback
+- Icon transitions
+- Menu icon animation
+- Input focus transitions
+- Success check animation
+- Error shake/subtle feedback
+- Card hover elevation
+- Image zoom on hover where appropriate
+- Copy-to-clipboard feedback
+- Phone/email interaction feedback
+- Loading indicators
+
+Every interaction should feel intentional.
+
+============================================================
+LOADING EXPERIENCE
+============================================================
+
+Do not leave users staring at blank screens.
+
+Implement appropriate loading states.
+
+Where asynchronous content exists, use:
+
+- Skeleton loaders
+- Spinners
+- Button loading states
+- Disabled states
+- Progress indicators where useful
+
+Skeletons should match the actual content layout.
+
+Do not use skeleton loading where content is already immediately available and no loading occurs.
+
+Avoid unnecessary loading animations.
+
+============================================================
+FORMS
+============================================================
+
+Forms must feel production-ready.
+
+Implement:
+
+- Proper labels
+- Helpful placeholders
+- Required indicators
+- Client-side validation
+- Server-side validation where applicable
+- Error messages
+- Success messages
+- Loading state
+- Disabled submission state
+- Field-level feedback
+- Accessible error association
+- Keyboard navigation
+- Mobile-friendly layout
+
+Do not rely only on browser validation.
+
+Validation messages should be human-readable.
+
+Example:
+
+Bad:
+
+"Invalid input"
+
+Better:
+
+"Please enter a valid phone number."
+
+============================================================
+SMART BUSINESS-SPECIFIC FORMS
+============================================================
+
+Create forms appropriate to the business.
+
+Do not use the exact same contact form for every industry.
+
+Examples:
+
+Dental clinic:
+
+- Name
+- Phone
+- Email
+- Treatment/service
+- Preferred date
+- Preferred time
+- Message
+
+Include a custom appointment experience when appropriate.
+
+Restaurant:
+
+- Name
+- Phone/email
+- Date
+- Time
+- Number of guests
+- Message
+
+Salon:
+
+- Name
+- Service
+- Preferred date
+- Preferred time
+- Contact information
+
+Local service company:
+
+- Name
+- Phone
+- Email
+- Service required
+- Project details
+- Preferred contact method
+
+Only add fields that make sense.
+
+Do not invent business processes that the business does not appear to support.
+
+============================================================
+CUSTOM DATE / CALENDAR UI
+============================================================
+
+When date selection is appropriate:
+
+Do NOT simply use an ugly browser-default date input if a custom experience is practical.
+
+Create a theme-matching date picker/calendar.
+
+It should support:
+
+- Month navigation
+- Date selection
+- Selected state
+- Disabled dates where applicable
+- Today state
+- Mobile usability
+- Keyboard accessibility
+- Clear visual hierarchy
+
+Use the website's design system.
+
+Do not make the calendar visually disconnected from the rest of the website.
+
+If there is no actual availability backend, do not pretend that availability is real.
+
+The UI must not falsely claim that a slot is confirmed.
+
+============================================================
+CUSTOM DROPDOWNS
+============================================================
+
+For important select fields, create polished custom dropdowns where appropriate.
+
+Requirements:
+
+- Clear selected state
+- Open/close animation
+- Keyboard support
+- Mobile support
+- Focus state
+- Disabled state
+- Error state
+- Proper ARIA behavior
+
+Do not use custom dropdowns unnecessarily for simple native selection where native controls provide a better accessibility experience.
+
+============================================================
+CONTACT EXPERIENCE
+============================================================
+
+Preserve the existing:
+
+/api/contact
+
+functionality.
+
+The existing SMTP implementation must continue to work.
+
+Do not replace it with a fake frontend-only form.
+
+The contact flow should provide clear feedback:
+
+Submitting:
+"Sending..."
+
+Success:
+A clear confirmation message.
+
+Failure:
+A useful error message and retry option.
+
+Do not expose SMTP credentials.
+
+============================================================
+BOOKING EXPERIENCE
+============================================================
+
+If the business type indicates appointments/bookings are important:
+
+Create a suitable booking flow.
+
+Examples:
+
+- Dental
+- Medical
+- Salon
+- Spa
+- Consultation
+- Professional services
+
+The booking UI should match the website theme.
+
+If no real booking backend exists:
+
+Do not pretend that a booking has been confirmed.
+
+The interface should clearly communicate what happens next.
+
+============================================================
+FOOTER
+============================================================
+
+Create a complete professional footer.
+
+Include relevant information such as:
+
+- Logo
+- Business description
+- Navigation
+- Services
+- Contact information
+- Address
+- Hours
+- Phone
+- Email
+- Social links when actually provided
+- Copyright
+
+Do not add fake social accounts.
+
+Footer must be responsive.
+
+On mobile:
+
+- Stack sections appropriately
+- Maintain readable spacing
+- Keep contact information accessible
+- Avoid oversized empty areas
+
+============================================================
+SEO
+============================================================
+
+Implement proper SEO throughout the website.
+
+Include:
+
+- Page title
+- Meta description
+- Canonical URL where appropriate
+- Open Graph metadata
+- Twitter/X metadata where appropriate
+- Favicon
+- Apple/mobile icons where appropriate
+- Robots metadata where appropriate
+- Sitemap support where appropriate
+- Semantic HTML
+- Correct heading hierarchy
+- Descriptive image alt text
+
+Titles and descriptions must be specific to the business.
+
+Do not keyword stuff.
+
+============================================================
+TAB TITLE / BROWSER EXPERIENCE
+============================================================
+
+The browser tab must have a proper title.
+
+Example:
+
+Business Name | Primary Service
+
+Do not leave:
+
+"Create Next App"
+
+"Next.js App"
+
+"Home"
+
+or other template titles.
+
+Create an appropriate favicon based on the business logo/brand.
+
+============================================================
+STRUCTURED DATA
+============================================================
+
+Where sufficient factual data exists, implement appropriate schema.org structured data.
+
+Use the appropriate business type when possible.
+
+Do not invent fields.
+
+Potential examples:
+
+- LocalBusiness
+- Dentist
+- Restaurant
+- BeautySalon
+- AutomotiveBusiness
+- ProfessionalService
+
+Only include information supported by the lead data.
+
+============================================================
+ACCESSIBILITY
+============================================================
+
+Follow accessibility best practices.
+
+Ensure:
+
+- Semantic HTML
+- Correct heading hierarchy
+- Labels
+- Keyboard navigation
+- Visible focus states
+- Accessible buttons
+- Accessible menus
+- Accessible modals
+- Accessible dropdowns
+- Accessible forms
+- Color contrast
+- Screen-reader-friendly labels
+- Meaningful alt text
+- Reduced motion support
+
+Do not sacrifice accessibility for visual effects.
+
+============================================================
+PERFORMANCE
+============================================================
+
+Keep the site fast.
+
+Prefer:
+
+- Server components where appropriate
+- Optimized images
+- next/image
+- Lazy loading
+- CSS animations
+- Minimal JavaScript
+- Existing dependencies
+
+Do not install large packages for trivial functionality.
+
+Avoid unnecessary client components.
+
+Avoid unnecessary API requests.
+
+============================================================
+TECHNICAL ARCHITECTURE
+============================================================
+
+Keep the existing Next.js App Router architecture.
+
+Use reusable components.
+
+Keep business data centralized where practical.
+
+Update:
+
+src/lib/site.ts
+
+and/or the existing content/configuration layer.
+
+Avoid duplicating business information throughout the application.
+
+Keep components maintainable.
+
+Avoid giant files.
+
+Avoid duplicated code.
+
+Avoid unused imports.
+
+Avoid dead code.
+
+Avoid console.log debugging statements.
+
+============================================================
+NO FAKE CONTENT
+============================================================
+
+NEVER fabricate:
+
+- Testimonials
+- Reviews
+- Google ratings
+- Awards
+- Certifications
+- Statistics
+- Team members
+- Doctors
+- Customer counts
+- Years of experience
+- Client logos
+- Partnerships
+- Prices
+- Guarantees
+- Locations
+- Opening hours
+- Services
+
+If the information is not available, omit it.
+
+============================================================
+NO GENERIC AI DESIGN
+============================================================
+
+Avoid common AI-generated website patterns:
+
+- Excessive purple/blue gradients
+- Excessive glassmorphism
+- Random glowing blobs
+- Excessive rounded cards
+- Every section inside a card
+- Huge meaningless headings
+- Repetitive layouts
+- Generic "Empowering businesses..." copy
+- Fake statistics
+- Fake testimonials
+- Excessive icons
+- Excessive animations
+- Unnecessary dark sections
+- Random gradients with no brand purpose
+
+The site should look like a real business website, not an AI demo.
+
+============================================================
+DESIGN CONSISTENCY
+============================================================
+
+Everything must belong to the same design system.
+
+The following must visually match:
+
+- Buttons
+- Inputs
+- Dropdowns
+- Calendar
+- Cards
+- Navigation
+- Footer
+- Modals
+- Loading states
+- Skeletons
+- Error states
+- Success states
+- Icons
+- Typography
+- Colors
+- Spacing
+- Animations
+
+Do not create one beautiful hero and then generic components everywhere else.
+
+============================================================
+RESPONSIVE TESTING
+============================================================
+
+Before finishing, inspect the website at multiple viewport sizes.
+
+At minimum consider:
+
+320
+375
+390
+430
+768
+1024
+1280
+1440
+1920
+
+Look specifically for:
+
+- Horizontal overflow
+- Broken grids
+- Overlapping elements
+- Incorrect font sizes
+- Navigation issues
+- Footer problems
+- Form problems
+- Calendar problems
+- Dropdown problems
+- Image cropping problems
+- Button problems
+
+Fix anything you find.
+
+============================================================
+FINAL QA
+============================================================
+
+Run:
+
+npm install
+
+if necessary.
+
+Then:
+
+npm run build
+
+If the build fails:
+
+- Read the error
+- Identify the root cause
+- Fix it
+- Run the build again
+
+Continue until:
+
+npm run build
+
+succeeds.
+
+Also verify:
+
+- No TypeScript errors
+- No broken imports
+- No missing components
+- No broken routes
+- No broken images
+- No console errors
+- Contact form works
+- /api/contact remains functional
+- Mobile menu works
+- Forms work
+- Buttons work
+- Dropdowns work
+- Calendar works where implemented
+- Loading states work
+- Success states work
+- Error states work
+- Footer works
+- Navigation works
+- SEO metadata exists
+- Favicon exists
+- No placeholder content remains
+
+============================================================
+SECURITY
+============================================================
+
+Never expose:
+
+- API keys
+- SMTP passwords
+- Tokens
+- Secrets
+- Private credentials
+
+.env.local must remain local and must not be committed.
+
+Do not print secrets into source files.
+
+============================================================
+GIT
+============================================================
+
+If GitHub tooling/credentials are available:
+
+- Use the provided repository/project slug.
+- Initialize Git if necessary.
+- Commit the completed website.
+- Push the completed project to the correct repository.
+
+Never commit:
+
+.env.local
+
+secrets
+
+credentials
+
+API keys
+
+tokens
+
+============================================================
+DEFINITION OF DONE
+============================================================
+
+The task is NOT complete merely because the code compiles.
+
+The task is complete only when the website is:
+
+- Business-specific
+- Professionally designed
+- Human-looking
+- Visually polished
+- Mobile-first
+- Fully responsive
+- Accessible
+- Interactive
+- Fast
+- SEO-ready
+- Conversion-oriented
+- Properly branded
+- Properly animated
+- Properly validated
+- Production-ready
+
+The website must feel intentionally designed for THIS business.
+
+Do not stop after generating the first working version.
+
+Perform a refinement pass.
+
+Look for areas that feel generic, empty, repetitive, unfinished, or AI-generated.
+
+Improve them before finishing.
+
+============================================================
+FINAL RESPONSE
+============================================================
+
+When everything is complete, report only:
+
+1. Website completed
+2. Build status
+3. Repository status
+4. Any unresolved issue
+
+Do not give a long explanation.
+
+Most importantly:
+
+DO THE WORK.
+
+Do not merely describe what you would do.
